@@ -5,10 +5,10 @@ PSQL="psql --username=freecodecamp --dbname=salon -t --no-align -c"
 MAIN_MENU() {
   if [[ $1 ]]
   then
-    echo -e "\n$1"
+    echo "$1"
   fi
 
-  echo -e "\nWelcome to My Salon, how can I help you?"
+  echo -e "Welcome to My Salon, how can I help you?"
   echo "$($PSQL "SELECT service_id || ') ' || name FROM services ORDER BY service_id;")"
 
   read SERVICE_ID_SELECTED
